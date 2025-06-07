@@ -1,3 +1,9 @@
 [build]
-  command = "npm run build"
-  publish = "build/"
+  base = "svelte-spotify"  # Le dossier de votre projet SvelteKit
+  command = "npm run build"  # La commande pour construire le projet
+  publish = "build/"  # Le dossier de sortie généré par SvelteKit
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
