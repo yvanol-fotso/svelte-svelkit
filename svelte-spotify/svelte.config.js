@@ -1,14 +1,17 @@
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto'; //par defaut mais comme je veux deployer sur Netlify je vais installer son adapter 
+import adapter from '@sveltejs/adapter-netlify';
 // import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'; //on va use preprocess que jai installer
-import preprocess from 'svelte-preprocess';
+// import preprocess from 'svelte-preprocess'; //depreciate n'est plus ajour
+import { sveltePreprocess } from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
 	// preprocess: vitePreprocess(),
+	// preprocess: preprocess({}) // n'est plus a jour 
 
-	preprocess: preprocess({
+	preprocess: sveltePreprocess({
 		scss: {
 			// prependData: '@use "../styles/functions";@use "@unsass/breakpoint";' // avec ceci les style present dans les composant ont des erreur
 			prependData: '@use "src/styles/functions";@use "@unsass/breakpoint";'

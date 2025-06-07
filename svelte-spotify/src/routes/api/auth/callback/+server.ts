@@ -48,7 +48,7 @@
 
 
 
-// vu que que il y'q certqin module que je n'utilse pqs je retire es import pour eviter les ligne rouge
+// vu que que il y'q certain module que je n'utilse pas je retire es import pour eviter les ligne rouge
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { SPOTIFY_APP_CLIENT_ID, BASE_URL } from '$env/static/private';
